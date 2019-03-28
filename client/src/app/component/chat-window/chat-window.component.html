@@ -1,0 +1,30 @@
+<div class="card horizontal">
+  <div class="card-content" *ngFor="let message of msgList">{{message}}</div>
+</div>
+
+  <div *ngIf="joined">
+      <div class="input-field">
+          <input type="text" [(ngModel)]="newMsg" (keyup.enter)="send()">
+      </div>
+      <div class="input-field">
+          <button class="waves-effect waves-light btn" (click)="send()">
+              <i class="material-icons right">chat</i>
+              Send
+          </button>
+      </div>
+  </div>
+
+  <div *ngIf="!joined">
+      <div class="input-field">
+          <input type="email" [(ngModel)]="email" placeholder="Email">
+      </div>
+      <div class="input-field">
+          <input type="text" [(ngModel)]="username" placeholder="Username">
+      </div>
+      <div class="input-field">
+          <button class="waves-effect waves-light btn" (click)="join()">
+              <i class="material-icons right">done</i>
+              Join
+          </button>
+      </div>
+  </div>
